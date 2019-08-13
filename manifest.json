@@ -73,5 +73,9 @@
     },
     "mp-qq" : {
         "appid" : "1109667577"
+    },
+    "h5" : {
+        "title" : "赛达答案助手",
+        "domain" : "promotion.mzsat.cn"
     }
 }
