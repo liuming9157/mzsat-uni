@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="content">
+		<view class="content1">
 			<view>
 				题号
 			</view>
@@ -28,10 +28,11 @@
 </script>
 
 <style lang="scss">
-	.content{
+	.content1{
 		margin: 30upx;
 		width:690upx ;
 		display: flex;
+		flex-direction: row;
 		flex-wrap: wrap;
 		view{
 			width: 345upx;
