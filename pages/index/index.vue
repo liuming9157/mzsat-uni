@@ -8,6 +8,11 @@
 				答案
 			</view>
 		</view>
+		<!-- #ifdef MP-BAIDU -->
+		<view class="tieba" @click="callTieba">
+			贴吧
+		</view>
+		<!-- #endif -->
 	</view>
 </template>
 
@@ -30,7 +35,31 @@
 				uni.navigateTo({
 					url: `../answer/answer?id=${id}`
 				})
+			},
+			// #ifdef MP-BAIDU
+			callTieba() { 
+			    let data = {
+			        third_app_id: 'YNxzVbxluAEfVqvznTu8jLtMy9oltcjs',
+			        third_app_name: '明志赛达',
+			        third_app_avatar: 'http://cdn.mzyun.tech/mzyun.png', 
+			        third_app_pic: 'http://cdn.mzyun.tech/sat-haibao.png',
+			        third_app_link: '/pages/index/index' 
+			    }
+			    let dataStr = encodeURIComponent(JSON.stringify(data)); 
+			    swan.navigateToSmartProgram({ 
+			        appKey: 'flFqXclepWs7RdugAszy9eERL7G5dS0I', 
+			        path: `/pages/frshistory/frshistory?extradata=${dataStr}`, 
+			        extraData: {
+			            from: 'mzsat' 
+			        },
+			        success(res) {
+			            swan.showToast({
+							title:'分享成功'
+						})
+			        }
+			    })
 			}
+			// #endif
 		},
 		onShareAppMessage() {
 			return{
@@ -69,5 +98,18 @@
 			color: blue;
 		}
 
+	}
+	.tieba{
+		position: fixed;
+		bottom: 20upx;
+		right: 0;
+		width: 120upx;
+		height: 120upx;
+		border-radius: 50%;
+		background-color: #007AFF;
+		color: white;
+		font-size: 28upx;
+		line-height: 120upx;
+		text-align: center;
 	}
 </style>
