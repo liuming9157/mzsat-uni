@@ -1,5 +1,5 @@
 {
-    "name" : "赛达答案助手",
+    "name" : "明志教育",
     "appid" : "__UNI__4385A0A",
     "description" : "",
     "versionName" : "1.0.0",
@@ -107,7 +107,7 @@
         "appid" : "1109667577"
     },
     "h5" : {
-        "title" : "赛达答案助手",
-        "domain" : "promotion.mzsat.cn"
+        "title" : "明志SAT",
+        "domain" : "sat.mzsat.cn"
     }
 }
